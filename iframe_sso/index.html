@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+  <script src="https://cdnjs.com/libraries/fingerprintjs2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fingerprintjs2@<VERSION>/dist/fingerprint2.min.js"></script>
+</head>
+<body>
+    
+
+    <button id='btn'>登录</button>
+    <iframe src="./demo.html" frameborder="0" style='display:none'></iframe>
+</body>
+</html>
+
+<script>
+    
+    btn.onclick = ()=>{
+        alert('登录成功');
+        iframe.contentWindow.postMessage(data);
+    }
+    let iframe = document.querySelector('iframe');
+    let data = JSON.stringify({
+        data:true,
+        token:'token'
+    });
+
+
+</script>

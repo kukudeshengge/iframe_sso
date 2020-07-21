@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <p>
+
+    </p>
+</body>
+</html>
+
+<script>
+    let p  = document.querySelector('p');
+    let demoToken = localStorage['demo-token']?localStorage['demo-token']:'';
+        if(demoToken){
+            p.innerHTML='已经登录';
+        }else{
+            p.innerHTML='未登录';
+        }
+        window.addEventListener('message',e=>{
+            console.log(e)
+        if(e.source!=window.parent)return;
+        localStorage.setItem('demo-token',JSON.parse(e.data).token);
+    })
+</script>
